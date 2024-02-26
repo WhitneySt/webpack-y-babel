@@ -1,6 +1,20 @@
-/*!****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/app/styles/index.css ***!
-  \****************************************************************************/
-body{
-    background-color: aquamarine;
+/*!********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss ***!
+  \********************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss (1) ***!
+  \************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Karla&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss (2) ***!
+  \************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss (3) ***!
+  \************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
