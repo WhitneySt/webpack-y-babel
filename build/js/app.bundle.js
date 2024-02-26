@@ -3169,14 +3169,14 @@ eval("__webpack_require__(/*! ../modules/web.timers */ \"./node_modules/core-js/
 
 /***/ }),
 
-/***/ "./src/app/index.js":
-/*!**************************!*\
-  !*** ./src/app/index.js ***!
-  \**************************/
+/***/ "./src/app/scripts/index.js":
+/*!**********************************!*\
+  !*** ./src/app/scripts/index.js ***!
+  \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/index.css */ \"./src/app/styles/index.css\");\n\nalert(\"Enlazado!\");\n\n//# sourceURL=webpack://test-webpack-babel/./src/app/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../styles/index.css */ \"./src/app/styles/index.css\");\n\nalert(\"Enlazado!\");\n\n//# sourceURL=webpack://test-webpack-babel/./src/app/scripts/index.js?");
 
 /***/ }),
 
@@ -3235,7 +3235,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
 /******/ 	__webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/scripts/index.js");
 /******/ 	
 /******/ })()
 ;
