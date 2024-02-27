@@ -1,2 +1,36 @@
 @import './modules/universals.scss';
 @import './modules/variables.scss';
+
+.transactionCard{
+    display: flex;
+    gap: 15px;
+
+    p{
+        width: 300px;
+    }
+
+    .type{
+        text-transform: capitalize;
+        width: 100px;
+        border: 1px solid $secundary-color;
+        text-align: center;
+        color: $secundary-color;
+    }
+}
+
+#transactions{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer{
+    text-align: center;
+}
+
+#form{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

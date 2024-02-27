@@ -13,7 +13,24 @@
             </figure>
         </nav>
     </header>
-    <main></main>
+    <main>
+        <h2>Agregar un nuevo movimiento</h2>
+        <form id="form">
+            <label for="">Descripción:</label>
+            <input name="descripcion" type="text" placeholder="Ingrese la descripción del movimiento">
+            <label for="">Tipo de movimiento:</label>
+            <select name="tipo">
+                <option value="">Seleccione un tipo</option>
+                <option value="gasto">Gasto</option>
+                <option value="ingreso">Ingreso</option>
+            </select>
+            <label for="">Monto:</label>
+            <input name="valor" type="text" placeholder="Ingrese el monto">
+            <button type="submit">Guardar</button>
+        </form>
+        <h2>Mis movimientos</h2>
+        <section id="transactions"></section>
+    </main>
     <footer>Hecho con ❤ por Front 7</footer>
 </body>
 </html>

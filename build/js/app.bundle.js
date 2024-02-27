@@ -3176,18 +3176,18 @@ eval("__webpack_require__(/*! ../modules/web.timers */ \"./node_modules/core-js/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ \"./src/app/styles/style.scss\");\n/* harmony import */ var _assets_images_image_intro_desktop_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/images/image-intro-desktop.jpg */ \"./src/app/assets/images/image-intro-desktop.jpg\");\n\n\n\n//Actualizar las imágenes en el atributo src de las etiquetas\nvar logoImage = document.getElementById(\"logo\");\nlogoImage.setAttribute(\"src\", _assets_images_image_intro_desktop_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n//# sourceURL=webpack://test-webpack-babel/./src/app/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.scss */ \"./src/app/styles/style.scss\");\n/* harmony import */ var _assets_images_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/images/logo.svg */ \"./src/app/assets/images/logo.svg\");\n\n\n\n//Actualizar las imágenes en el atributo src de las etiquetas\nvar logoImage = document.getElementById(\"logo\");\nlogoImage.setAttribute(\"src\", _assets_images_logo_svg__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n//# sourceURL=webpack://test-webpack-babel/./src/app/index.js?");
 
 /***/ }),
 
-/***/ "./src/app/assets/images/image-intro-desktop.jpg":
-/*!*******************************************************!*\
-  !*** ./src/app/assets/images/image-intro-desktop.jpg ***!
-  \*******************************************************/
+/***/ "./src/app/assets/images/logo.svg":
+/*!****************************************!*\
+  !*** ./src/app/assets/images/logo.svg ***!
+  \****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"images/image-intro-desktop.jpg\");\n\n//# sourceURL=webpack://test-webpack-babel/./src/app/assets/images/image-intro-desktop.jpg?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + \"images/logo.svg\");\n\n//# sourceURL=webpack://test-webpack-babel/./src/app/assets/images/logo.svg?");
 
 /***/ }),
 
