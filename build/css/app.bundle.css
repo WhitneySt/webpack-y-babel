@@ -13,8 +13,53 @@
 /*!************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss (3) ***!
   \************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss (4) ***!
+  \************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Karla&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss (5) ***!
+  \************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap);
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/app/styles/style.scss (6) ***!
+  \************************************************************************************************************************/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "DM Serif Display", serif;
+}
+
+.transactionCard {
+  display: flex;
+  gap: 15px;
+}
+.transactionCard p {
+  width: 300px;
+}
+.transactionCard .type {
+  text-transform: capitalize;
+  width: 100px;
+  border: 1px solid hsl(216, 30%, 68%);
+  text-align: center;
+  color: hsl(216, 30%, 68%);
+}
+
+#transactions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer {
+  text-align: center;
+}
+
+#form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }

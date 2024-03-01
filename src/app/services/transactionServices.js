@@ -30,3 +30,13 @@ export const deleteATransaction = async (id) => {
     return null;
   }
 };
+
+export const getATransaction = async (id) => {
+  try {
+    const { data } = await axios.get(endpoints.transaction(id));
+    return data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
