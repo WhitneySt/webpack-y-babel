@@ -40,3 +40,23 @@ export const getATransaction = async (id) => {
     return null;
   }
 };
+
+export const editATransaction = async (id, editData) => {
+  try {
+    const url = endpoints.transaction(id);
+    const response = await axios.patch(url, editData);
+    return response;
+    
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+// const usuario = {
+//   name: "Deimer",
+//   apellido: "Amaya",
+//   edad: 25
+// }
+
+// const user = { ...usuario, email: "deimer@gmail.com", contrasena: "1235"}

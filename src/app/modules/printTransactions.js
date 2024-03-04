@@ -21,3 +21,11 @@ const printTransactions = (container, transactionList) => {
 };
 
 export default printTransactions;
+
+//Función que nos permite filtrar una lista de transacciones por tipo
+export const filterByTypes = (transactions, type) => {
+  return transactions.filter(item => item.tipo == type);
+}
+
+
+

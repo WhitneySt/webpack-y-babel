@@ -1,5 +1,5 @@
 import axios from "axios";
-import endpoints from "./data";
+import endpoints, { conversations } from "./data";
 
 export const startAConversation = async ({
   senderUser,
@@ -69,3 +69,14 @@ export const deleteAMessage = async ({
     return null;
   }
 };
+
+
+export const getAllConversations = async () => {
+    try {
+        const { data } = await axios.get(conversations);
+        return data;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}

@@ -3,32 +3,27 @@ import image from "./assets/images/logo.svg";
 import {
   createTransaction,
   deleteATransaction,
+  editATransaction,
   getATransaction,
   getTransactions,
 } from "./services/transactionServices";
-import printTransactions from "./modules/printTransactions";
-import { getDataForm } from "./modules/getDataForm";
+import printTransactions, { filterByTypes } from "./modules/printTransactions";
+import { getDataForm, insertDataToForm } from "./modules/getDataForm";
 import Swal from "sweetalert2";
 
 //Actualizar las imágenes en el atributo src de las etiquetas
 let transactions = [];
+let isEdit = false;
 const logoImage = document.getElementById("logo");
+const title = document.getElementById("titleForm");
 const transactionsContainer = document.getElementById("transactions");
 const form = document.getElementById("form");
+const filterButtons = document.querySelectorAll(".button__filter");
 
 
-const convertForm = (form, editData) => {
-  const title = document.getElementById("titleForm");
-  title.innerText = "Editar Movimiento";
-  const formChildrens = Array.from(form.children);
-  formChildrens.forEach((element) => {
-    if (element.getAttribute("name")) {
-      const key = element.getAttribute("name");
-      element.value = editData[key];
-    }
-  });
-};
 
+
+//De esta manera insertamos las imágenes en la UI cuando tenemos los recursos localmente.
 logoImage.setAttribute("src", image);
 
 //Queremos listar los movimientos o trasacciones
@@ -37,23 +32,61 @@ document.addEventListener("DOMContentLoaded", async () => {
   printTransactions(transactionsContainer, transactions);
 });
 
+//Escuchamos los click en los botones de filtrado
+
+filterButtons.forEach(button => {
+  // let filterResult =[]
+  button.addEventListener("click", () => {
+    // if (button.id === "todos") {
+    //   filterResult = transactions;
+    // } else {
+    //   filterResult = filterByTypes(transactions, button.id)
+    // }
+    const filterResult =
+      button.id === "todos"
+        ? transactions
+        : filterByTypes(transactions, button.id);
+    printTransactions(transactionsContainer, filterResult);
+  })
+})
+
+//Controlamos el evento submit del formulario. Este form tiene dos acciones: Agregar y editar movimiento 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
+  let message = "";
   const newTransaction = getDataForm(form);
-  // const date = new Date().toLocaleDateString("en-US");
-  const date = new Date();
-  console.log(date);
-  newTransaction.creationDate = date;
-  newTransaction.validate = false;
-  console.log(newTransaction);
-  const responseTransaction = await createTransaction(newTransaction);
-  transactions.push(responseTransaction.data);
+
+  if (isEdit) {
+    //Cuando queremos editar
+    await editATransaction(isEdit, newTransaction);
+    transactions = await getTransactions();
+    title.innerText = "Agregar un nuevo movimiento";
+    isEdit = false;
+    message = "El movimiento ha sido editado exitosamente"
+  } else {
+    //Cuando queremos agregar nuevo movimiento
+    // const date = new Date().toLocaleDateString("en-US");
+    newTransaction.creationDate = new Date();
+    newTransaction.validate = false;
+    console.log(newTransaction);
+    const responseTransaction = await createTransaction(newTransaction);
+    transactions.push(responseTransaction.data);
+    message = "El movimiento ha sido creado exitosamente";
+    
+  }
+
   printTransactions(transactionsContainer, transactions);
+  Swal.fire({
+    title: "Excelente!",
+    text: message,
+    icon: "success",
+  });
   form.reset();
+  
 });
 
 document.addEventListener("click", async (event) => {
-  //Eliminar movimientos
+  //Click para eliminar movimientos
   if (event.target.classList.contains("delete")) {
     const id = event.target.getAttribute("name");
     Swal.fire({
@@ -78,19 +111,19 @@ document.addEventListener("click", async (event) => {
       }
     });
   }
-  //Editar Movimientos
+  //Click para editar Movimientos
   if (event.target.classList.contains("edit")) {
-    const id = event.target.getAttribute("name");
-    const transaction = await getATransaction(id);
-    console.log(transaction);
-    convertForm(form, transaction);
+    const isEdit = event.target.getAttribute("name");    
+    const transaction = await getATransaction(isEdit);  
+    title.innerText = "Editar Movimiento";
+    insertDataToForm(form, transaction);
     // const editedTransaction = getDataForm(form);
     // console.log(editedTransaction);
   }
 });
 
 //1. Terminar con las funcionalidades del CRUD Movimientos:
-//Obtener todos los movimientos: X, crear nuevo movimiento: X, eliminar Movimiento: X, editar Movimiento: Pending, filtrar movimientos por tipo: pending
+//Obtener todos los movimientos: X, crear nuevo movimiento: X, eliminar Movimiento: X, editar Movimiento: X, filtrar movimientos por tipo: pending
 
 //2. Configuración de webpack para trabajar con multipages
 //3. Deployment: JSON SERVER (Railways), ghPages

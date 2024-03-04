@@ -8,3 +8,14 @@ export const getDataForm = (form) => {
 
   return dataForm;
 };
+
+//Función para insertar datos en los campos de entrada de un formulario
+export const insertDataToForm = (form, editData) => {
+  const formChildrens = Array.from(form.children);
+  formChildrens.forEach((element) => {
+    if (element.getAttribute("name")) {
+      const key = element.getAttribute("name");
+      element.value = editData[key];
+    }
+  });
+};

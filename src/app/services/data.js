@@ -11,3 +11,6 @@ const endpoints = {
 };
 
 export default endpoints;
+
+//Destructuring de objetos
+export const { transactions, transaction, conversations, conversation } = endpoints;
