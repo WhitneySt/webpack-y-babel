@@ -1,0 +1,7 @@
+@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Karla&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Karla&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Karla:wght@700&display=swap);
+*{margin:0;padding:0;box-sizing:border-box;font-family:"DM Serif Display",serif}.transactionCard{display:flex;gap:15px}.transactionCard p{width:300px}.transactionCard .type{text-transform:capitalize;width:100px;border:1px solid #95a9c6;text-align:center;color:#95a9c6}#transactions{display:flex;flex-direction:column;gap:10px}footer{text-align:center}#form{padding:20px;display:flex;flex-direction:column;gap:8px}
